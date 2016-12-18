@@ -1,0 +1,11 @@
+{
+    "config":{
+		"bin-dir":"bin/"
+    },
+    "autoload":{
+		"psr-0":{"Codeeducation":"scr/"}
+    },
+    "require":{
+		"monolog/monolog": "1.0.*"
+    }
+}
