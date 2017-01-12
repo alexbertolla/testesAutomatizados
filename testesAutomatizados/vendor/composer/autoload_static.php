@@ -52,18 +52,18 @@ class ComposerStaticInit1302d23460dea4ed9cdf40138afe7388
     );
 
     public static $prefixesPsr0 = array (
+        't' => 
+        array (
+            'testesAutomatizados' => 
+            array (
+                0 => __DIR__ . '/../..' . '/src',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-        ),
-        'C' => 
-        array (
-            'CodeEducation' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
             ),
         ),
     );
