@@ -13,7 +13,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @expectedException \InvalidArgumentException;
+     * @expectedException \Exception;
      */
     public function testTipoClasseFieldset() {
         $fieldset = new fieldset\Fieldset('fieldset', 'a');
