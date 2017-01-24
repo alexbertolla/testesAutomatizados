@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace interfaces;
+namespace testesAutomatizados\interfaces;
 
 /**
  * Description of InterfaceEmptyElements

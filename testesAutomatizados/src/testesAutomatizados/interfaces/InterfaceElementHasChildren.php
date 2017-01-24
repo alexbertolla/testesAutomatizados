@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace interfaces;
+namespace testesAutomatizados\interfaces;
 
-use interfaces\InterfaceElement;
+use testesAutomatizados\interfaces\InterfaceElement;
 
 /**
  *

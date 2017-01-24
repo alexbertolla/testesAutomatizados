@@ -5,14 +5,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-namespace testesAutomatizados\interfaces;
-
+namespace testesAutomatizados\elements\form\requests;
 /**
+ * Description of Request
  *
  * @author alex.bertolla
  */
-interface InterfaceEditbleElement {
-
-    function setValue($value);
+class Request {
+    public function __construct() {
+    }
 }
