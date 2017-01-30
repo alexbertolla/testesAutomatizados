@@ -25,12 +25,12 @@ use testesAutomatizados\elements\li\LI;
 class Form extends Validator implements InterfaceFullElements, InterfaceElement, InterfaceElementHasChildren {
 
     public $headerMessages;
-    public  $name;
-    public  $id;
-    public  $form;
-    public  $method;
-    public  $action;
-    public  $children;
+    public $name;
+    public $id;
+    public $form;
+    public $method;
+    public $action;
+    public $children;
 
     public function __construct($name, $id, $method, $action) {
         $this->name = $name;
@@ -48,7 +48,7 @@ class Form extends Validator implements InterfaceFullElements, InterfaceElement,
     }
 
     public function addMessageToHeader(LI $liErrorMessage) {
-        print_r($liErrorMessage->render());
+//        print_r($liErrorMessage->render());
 //        echo $liErrorMessage->render() . '|';
         $this->headerMessages->addChild($liErrorMessage);
     }
@@ -71,29 +71,26 @@ class Form extends Validator implements InterfaceFullElements, InterfaceElement,
 
     private function renderPrepare($elementsRendered) {
         $this->abrirTag();
-        $this->form.=$elementsRendered;
+        $this->form .= $elementsRendered;
         $this->fecharTag();
     }
 
     public function render() {
         $renderAll = $this->renderChildren();
         $this->renderPrepare($renderAll);
-        echo $this->form;
+        return $this->form;
     }
 
     public function renderField($field) {
-        $child = $this->children[$field];
-        if ($child) {
+
+        if (isset($this->children[$field])) {
+            $child = $this->children[$field];
             $this->renderPrepare($child->render());
             $resultado = $this->form;
         } else {
-            $resultado = "elemento {$field} não existe no formulário! ";
+            $resultado = "elemento {$field} não existe no formulário!";
         }
-        $this->exibirResultado($resultado);
-    }
-
-    private function exibirResultado($resultado) {
-        echo $resultado;
+        return $resultado;
     }
 
     public function createField(InterfaceElement $element, Fieldset $field) {
