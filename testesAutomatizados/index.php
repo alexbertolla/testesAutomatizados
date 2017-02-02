@@ -17,22 +17,15 @@ use testesAutomatizados\pdo\ConnectionSqlite;
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Testes Automatizados</title>
     </head>
     <body>
         <?php
         include_once './autoload.php';
         
-        
-        
-//         $dados = array(
-//            'nome' => 'Carro',
-//            'valor' => 30000.00,
-//            'descricao' => 'Ford Fiesta 1.6 flex ano 2016/2017 5 portas!'
-//        );
 
         $dados = array(
-            'nome' => '',
+            'nome' => 'Ford Fiesta',
             'valor' => 'ABC',
             'descricao' => 'Ford Fiesta 1.6 flex ano 2016/2017 5 portas!'
             . '[ggdfjgklsdfjgjsdlfgjlsdkfjglsdjglkdsjgjsdçgjdjgsçdfljgçsldf'
@@ -42,6 +35,7 @@ use testesAutomatizados\pdo\ConnectionSqlite;
         );
 
         $listaCategoria = ConnectionSqlite::listaDados();
+        print_r($listaCategoria);
         $select = new Select('select', 'select', FALSE, new Label('Categoria: '));
         foreach ($listaCategoria as $categoria){
             $select->addChild($categoria->id, $categoria->nome);
@@ -73,7 +67,7 @@ use testesAutomatizados\pdo\ConnectionSqlite;
         
         $formulario->pupular($dados);
         $formulario->validarCampos();
-        $formulario->render();
+        echo $formulario->render();
 
         
         ?>
